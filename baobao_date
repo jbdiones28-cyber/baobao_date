@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fancy Cat Monthsary 💕</title>
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background: linear-gradient(135deg, #ffd1dc, #ffe6f2);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: white;
+    padding: 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+}
+
+.cat {
+    font-size: 80px;
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+h1 {
+    font-size: 22px;
+    color: #ff4f81;
+    margin-bottom: 25px;
+}
+
+button {
+    padding: 12px 28px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    margin: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#yesBtn {
+    background-color: #ff4f81;
+    color: white;
+}
+
+#yesBtn:hover {
+    transform: scale(1.1);
+}
+
+#noBtn {
+    background-color: #333;
+    color: white;
+    position: absolute;
+}
+
+.hidden {
+    display: none;
+}
+
+.final-message {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #ff4f81;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.heart {
+    position: absolute;
+    font-size: 24px;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="cat">🐱👔</div>
+
+    <h1>
+        Meowdy my love 💕<br><br>
+        Since we’re camping with friends this Valentine’s 🏕️<br>
+        Will you go on a fancy monthsary date with me? 🥺💖
+    </h1>
+
+    <button id="yesBtn">YES 😻</button>
+    <button id="noBtn">No 🙀</button>
+
+    <div id="result" class="hidden final-message">
+        MEEE-YAYYY!! 😻💖<br><br>
+        Fancy Cat promises:<br>
+        ✨ A proper date<br>
+        ✨ Just you and me<br>
+        ✨ Extra love and cuddles<br><br>
+        I love you so much 💕🐱
+    </div>
+</div>
+
+<script>
+const noBtn = document.getElementById("noBtn");
+const yesBtn = document.getElementById("yesBtn");
+const result = document.getElementById("result");
+const container = document.querySelector(".container");
+
+// Make NO button impossible to click
+function moveButton() {
+    const maxX = container.clientWidth - noBtn.offsetWidth;
+    const maxY = container.clientHeight - noBtn.offsetHeight;
+
+    const randomX = Math.random() * maxX;
+    const randomY = Math.random() * maxY;
+
+    noBtn.style.left = randomX + "px";
+    noBtn.style.top = randomY + "px";
+}
+
+noBtn.addEventListener("mouseover", moveButton);
+noBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+    moveButton();
+});
+
+// YES button action
+yesBtn.addEventListener("click", function() {
+    result.classList.remove("hidden");
+    yesBtn.style.display = "none";
+    noBtn.style.display = "none";
+    createHearts();
+});
+
+// Heart animation
+function createHearts() {
+    for (let i = 0; i < 40; i++) {
+        let heart = document.createElement("div");
+        heart.innerHTML = "💖";
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * window.innerWidth + "px";
+        heart.style.top = "-20px";
+        document.body.appendChild(heart);
+    }
+}
+</script>
+
+</body>
+</html>
