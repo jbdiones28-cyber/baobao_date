@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fancy Cat Monthsary 💕</title>
+<title>Baobao's Monthsary 💕</title>
 
 <style>
 body {
@@ -107,8 +107,8 @@ button {
     <div class="cat">🐱👔</div>
 
     <h1>
-        Meowdy my love 💕<br><br>
-        Since we’re camping with friends this Valentine’s 🏕️<br>
+        Hi Baobao My Love 💕<br><br>
+        Since we’re camping with friends this Weekend's 🏕️<br>
         Will you go on a fancy monthsary date with me? 🥺💖
     </h1>
 
@@ -117,11 +117,11 @@ button {
 
     <div id="result" class="hidden final-message">
         MEEE-YAYYY!! 😻💖<br><br>
-        Fancy Cat promises:<br>
+         Baobao Cat promises:<br>
         ✨ A proper date<br>
         ✨ Just you and me<br>
         ✨ Extra love and cuddles<br><br>
-        I love you so much 💕🐱
+        I love you so much Bao💕🐱
     </div>
 </div>
 
